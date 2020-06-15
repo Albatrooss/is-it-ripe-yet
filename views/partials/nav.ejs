@@ -8,12 +8,16 @@
     <li>
       <h2 id="add-fruit">ADD FRUIT</h2>
       <form action="/fruit/add" id="add-fruit-form">
-        <label for="fruit-name">Name: <input type="text" name="name" id="fruit-name" /></label>
-        <label for="fruit-type">Type: <input type="text" name="type" id="fruit-type" /></label>
+        <label for="fruit-name"
+          >Name: <input type="text" name="name" id="fruit-name" required lowercase
+        /></label>
+        <label for="fruit-type"
+          >Type: <input type="text" name="type" id="fruit-type" required
+        /></label>
         <label for="fruit-color"
           >Color:
           <div class="add-fruit-div">
-            <select>
+            <select name="color" id="fruit-color">
               <option value="0"></option>
               <option value="1">Audi</option>
               <option value="2">BMW</option>
@@ -27,7 +31,9 @@
             </select>
           </div>
         </label>
-        <label for="fruite-date">Bought: <input type="text" name="bought" id="fruit-date" /></label>
+        <label for="fruite-date"
+          >Bought: <input type="text" name="bought" id="fruit-date" placeholder="YYYY-MM-DD"
+        /></label>
         <button type="submit"><p>ADD FRUIT</p></button>
       </form>
     </li>

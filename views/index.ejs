@@ -12,9 +12,10 @@
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
-    <%- include('partials/nav') %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <%= user ? user : 'Hello' %>
+    <%- include('partials/nav') %> <% if (!user) { %>
+    <a href="/login">LOGIN</a>
+    <a href="/signup">SIGN UP</a>
+
+    <%}%> <%= user ? user : 'Hello' %>
   </body>
 </html>

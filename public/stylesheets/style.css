@@ -76,6 +76,10 @@ nav form input {
   border: 5px solid var(--nav-grey);
   font-size: 100px;
 }
+nav form input:last-child {
+  font-size: 70px;
+  text-align: center;
+}
 #add-fruit {
   cursor: pointer;
 }

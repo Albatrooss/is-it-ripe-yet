@@ -17,7 +17,7 @@ function handleMenu(el) {
   el.classList.toggle('showing');
 }
 
-//Replaces options in nav form with divs
+// Replaces options in nav form with divs
 for (var indol = 0; indol < select.length; indol++) {
   let d = document.createElement('div');
   d.className = `option option-${indol}`;
