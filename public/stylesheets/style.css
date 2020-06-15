@@ -6,6 +6,11 @@
   --banana-2: #C6E079;
   --banana-4: #F8E177;
 }
+a:visited,
+a {
+  color: var(--nav-grey);
+  text-decoration: none;
+}
 body {
   background-color: #ddd;;
 }
@@ -43,6 +48,7 @@ nav li h2 {
   background-color: var(--banana-4);
   font-size: 100px;
   text-align: center;
+  color: var(--nav-grey)
 }
 
 nav li form {

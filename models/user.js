@@ -8,14 +8,14 @@ const userSchema = new Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true, lowercase: true, unique: true },
-    googleId: { type: String, unique: true },
+    // googleId: { type: String },
     password: { type: String, required: true },
     perfect: { type: Number, default: 6, min: 0, max: 9 },
-    fruits: { type: [Schema.Types.ObjectId], ref: 'Fruit' },
     friends: { type: [Schema.Types.ObjectId], ref: 'Users' },
   },
   {
     timestamps: true,
+    runSettersOnQuery: true,
   }
 );
 
@@ -26,7 +26,7 @@ userSchema.set('toJSON', {
   },
 });
 
-userSchema.pre('save', next => {
+userSchema.pre('save', function (next) {
   const user = this;
   if (!user.isModified('password')) return next();
   bcrypt.hash(user.password, SALT_ROUNDS, (err, hash) => {
@@ -36,8 +36,8 @@ userSchema.pre('save', next => {
   });
 });
 
-userSchema.methods.comparePassword = (tryPassword, cb) => {
-  bcrypt.compare(tryPassword, this.password, (errr, isMatch) => {
+userSchema.methods.comparePassword = function (tryPassword, cb) {
+  bcrypt.compare(tryPassword, this.password, (err, isMatch) => {
     if (err) return cb(err);
     cb(null, isMatch);
   });

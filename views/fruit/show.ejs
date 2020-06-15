@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><%= title %></title>
     <link
       rel="stylesheet"
@@ -12,11 +14,12 @@
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
-    <%- include('partials/nav') %> <%if (user) { %>
-    <h2>Welcome <%= user.name %>!</h2>
-    <% } else { %>
-    <a href="/login">LOGIN</a>
-    <a href="/signup">SIGN UP</a>
-    <% } %>
+    <%- include('../partials/nav') %> <% fruits.forEach(fruit => { %>
+    <h2><%= fruit.name %></h2>
+    <p>
+      <strong><%= fruit.type %></strong>: <%=
+      fruit.bought.toISOString().split('').slice(0,10).join('') %>
+    </p>
+    <% }) %>
   </body>
 </html>

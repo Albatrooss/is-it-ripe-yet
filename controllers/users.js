@@ -3,6 +3,7 @@ const User = require('../models/user');
 const user = require('../models/user');
 
 const loginForm = (req, res) => {
+  console.log('hello?');
   res.render('users/login', { title: 'Please Login', postUrl: 'login', btnText: 'Sign In' });
 };
 
@@ -18,6 +19,7 @@ const login = (req, res, next) => {
             if (err) return next(err);
             return res.redirect('/');
           });
+        } else {
           return next(Error('invalid Credentials'));
         }
       });
@@ -25,7 +27,7 @@ const login = (req, res, next) => {
 };
 
 const signupForm = (req, res) => {
-  res.render('/users/signup', {
+  res.render('users/signup', {
     title: 'Please Sign Up',
     postUrl: '/signup',
     btnText: 'Sign Up',

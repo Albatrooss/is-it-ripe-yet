@@ -1,6 +1,18 @@
 <div class="auth-form-container">
   <form class="auth-form" method="POST" action="<%= postUrl %>">
-    <h1 class="h3 mb-3 font-weight-normal"><%= heading %></h1>
+    <h1 class="h3 mb-3 font-weight-normal"><%= title %></h1>
+    <% if (btnText === 'Sign Up') {%>
+    <label for="inputName" class="sr-only">Name</label>
+    <input
+      type="texy"
+      id="inputName"
+      class="form-control"
+      placeholder="Name"
+      required=""
+      autofocus=""
+      name="name"
+    />
+    <% } %>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input
       type="email"
