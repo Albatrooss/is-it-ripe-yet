@@ -2,10 +2,19 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
+    <%- include('partials/nav') %>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <%= user ? user : 'Hello' %>
   </body>
 </html>

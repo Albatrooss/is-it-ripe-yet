@@ -1,8 +1,126 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --nav-grey: #707070;
+  --banana-2: #C6E079;
+  --banana-4: #F8E177;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #ddd;;
+}
+nav div.main-nav{
+  height: 150px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #C6E079;
+  font-size: 100px;;
+  color: var(--nav-grey);
+  padding-right: 25px
+}
+nav div h1 {
+  font-size: 75px;
+  flex: 1;
+  text-align: center;
+  color: var(--nav-grey);
+}
+nav div h1 strong {
+  color: #F8E177;
+  font-size: 100px;
+  -webkit-text-stroke: 3px var(--nav-grey);
 }
 
-a {
-  color: #00B7FF;
+nav ul {
+  display: none;
+}
+
+nav ul.showing {
+  display: block;
+  background-color: #fff;
+}
+nav li h2 {
+  background-color: var(--banana-4);
+  font-size: 100px;
+  text-align: center;
+}
+
+nav li form {
+  display: none;
+}
+
+nav li form.showing {
+  display: block;
+  padding: 25px;
+}
+
+nav form label,
+nav form button {
+  width: 875px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 250px;
+  margin: 25px;
+  padding: 25px;
+  border: 5px solid var(--nav-grey);
+  border-radius: 25px;
+  font-size: 100px;
+}
+nav form button p {
+  text-align: center;
+}
+nav form input {
+  height: 150px;
+  width: 500px;
+  border: 5px solid var(--nav-grey);
+  font-size: 100px;
+}
+#add-fruit {
+  cursor: pointer;
+}
+.add-fruit-div select {
+  display: none;
+}
+.add-fruit-div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+}
+.option {
+  width: 100px;
+  height: 100px;
+}
+.option-0 {
+  background-color: darkgreen;
+}
+.option-1 {
+  background-color: green;
+}
+.option-2 {
+  background-color: greenyellow;
+}
+.option-3 {
+  background-color: var(--banana-2);
+}
+.option-4 {
+  background-color: var(--banana-4);
+}
+.option-5 {
+  background-color: yellow;
+}
+.option-6 {
+  background-color: rgb(235, 250, 25);
+}
+.option-7 {
+  background-color: rgb(202, 180, 52);
+}
+.option-8 {
+  background-color: rgb(199, 172, 22);
+}
+.option-9 {
+  background-color: rgb(128, 87, 0);
+}
+.option-selected {
+  border: 10px solid red;
 }
