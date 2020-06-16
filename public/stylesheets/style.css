@@ -15,25 +15,25 @@ body {
   background-color: #ddd;;
 }
 nav div.main-nav{
-  height: 150px;
+  height: 100px;
   display: flex;
   align-items: center;
   padding: 10px;
   background-color: #C6E079;
-  font-size: 100px;;
+  font-size: 33px;;
   color: var(--nav-grey);
   padding-right: 25px
 }
 nav div h1 {
-  font-size: 75px;
+  font-size: 33px;
   flex: 1;
   text-align: center;
   color: var(--nav-grey);
 }
 nav div h1 strong {
   color: #F8E177;
-  font-size: 100px;
-  -webkit-text-stroke: 3px var(--nav-grey);
+  font-size: 50px;
+  -webkit-text-stroke: 2px var(--nav-grey);
 }
 
 nav ul {
@@ -44,9 +44,12 @@ nav ul.showing {
   display: block;
   background-color: #fff;
 }
+nav li {
+  margin: 2px 0;
+}
 nav li h2 {
   background-color: var(--banana-4);
-  font-size: 100px;
+  font-size: 50px;
   text-align: center;
   color: var(--nav-grey)
 }
@@ -56,34 +59,39 @@ nav li form {
 }
 
 nav li form.showing {
-  display: block;
-  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px 0;
+  /* padding: 10px; */
 }
 
 nav form label,
 nav form button {
-  width: 875px;
+  width: 350px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 250px;
-  margin: 25px;
-  padding: 25px;
+  height: 100px;
+  margin: 7px 0;
+  padding: 15px;
   border: 5px solid var(--nav-grey);
   border-radius: 25px;
-  font-size: 100px;
+  font-size: 24px;
 }
 nav form button p {
+  width: 100%;
   text-align: center;
 }
 nav form input {
-  height: 150px;
-  width: 500px;
+  height: 75px;
+  width: 200px;
   border: 5px solid var(--nav-grey);
   font-size: 100px;
 }
 nav form input:last-child {
-  font-size: 70px;
+  padding-left: 5px;
+  font-size: 22px;
   text-align: center;
 }
 #add-fruit {
@@ -95,11 +103,11 @@ nav form input:last-child {
 .add-fruit-div {
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
+  width: 200px;
 }
 .option {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
 }
 .option-0 {
   background-color: darkgreen;
@@ -132,5 +140,5 @@ nav form input:last-child {
   background-color: rgb(128, 87, 0);
 }
 .option-selected {
-  border: 10px solid red;
+  border: 5px solid red;
 }
