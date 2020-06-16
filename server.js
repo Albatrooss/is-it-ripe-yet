@@ -33,7 +33,7 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    stor: new MongoStore({ url: process.env.DATABASE_URL }),
+    store: new MongoStore({ url: process.env.DATABASE_URL }),
   })
 );
 app.use(passport.initialize());

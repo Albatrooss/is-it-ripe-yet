@@ -14,12 +14,14 @@
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
-    <%- include('../partials/nav') %> <% fruits.forEach(fruit => { %>
+    <%- include('../partials/nav') %> <% if (fruits) { fruits.forEach(fruit => { %>
     <h2><%= fruit.name %></h2>
     <p>
       <strong><%= fruit.type %></strong>: <%=
       fruit.bought.toISOString().split('').slice(0,10).join('') %>
     </p>
-    <% }) %>
+    <% }) } else { %>
+    <h3>You don't appear to have any fruit!</h3>
+    <% } %>
   </body>
 </html>

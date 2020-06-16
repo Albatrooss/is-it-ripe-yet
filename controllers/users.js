@@ -49,7 +49,7 @@ const signup = async (req, res, next) => {
 
 const logout = (req, res) => {
   req.logout();
-  res.redirect('/');
+  res.redirect('/success');
 };
 
 module.exports = {
