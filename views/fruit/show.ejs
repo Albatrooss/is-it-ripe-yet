@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><%= title %></title>
+    <link rel="shortcut icon" href="images/banana.png" type="image/png" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
@@ -11,15 +12,17 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/my-fruits.css" />
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
     <%- include('../partials/nav') %> <% if (fruits) { fruits.forEach(fruit => { %>
     <h2><%= fruit.name %></h2>
     <p>
-      <strong><%= fruit.type %></strong>: <%=
-      fruit.bought.toISOString().split('').slice(0,10).join('') %>
+      <strong><%= fruit.type %></strong>: <%= new Date(fruit.bought * 8.64e+7).toDateString() %> <%=
+      fruit.color %>
     </p>
+    <div class="fruit-show-color banana-color-<%= fruit.newColor %>"></div>
     <% }) } else { %>
     <h3>You don't appear to have any fruit!</h3>
     <% } %>

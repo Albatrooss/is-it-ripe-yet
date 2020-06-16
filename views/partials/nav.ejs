@@ -3,7 +3,11 @@
     <h1>
       <a href="/">IS IT <strong>RIPE</strong> YET?</a>
     </h1>
+    <% if (!user) { %>
+    <i id="menu" class="fas fa-bars" style="opacity: 0;"></i>
+    <% } else { %>
     <i id="menu-btn" class="fas fa-bars"></i>
+    <% } %>
   </div>
   <ul>
     <li>
@@ -35,13 +39,16 @@
             </select>
           </div>
         </label>
-        <label for="fruite-date"
-          >Bought: <input type="text" name="bought" id="fruit-date" placeholder="YYYY-MM-DD"
+        <label for="fruit-date"
+          >Bought: <input type="date" name="bought" id="fruit-date" placeholder="YYYY-MM-DD"
         /></label>
         <button type="submit"><p>ADD FRUIT</p></button>
       </form>
     </li>
     <% if (user) { %>
+    <li>
+      <h2><a href="/settings">Settings</a></h2>
+    </li>
     <li>
       <h2><a href="/logout">Log Out</a></h2>
     </li>

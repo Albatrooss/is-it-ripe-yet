@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="shortcut icon" href="images/banana.png" type="image/png" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
@@ -18,31 +19,6 @@
     <a href="/login">LOGIN</a>
     <a href="/signup">SIGN UP</a>
     <a href="/auth/google">LOGIN WITH GOOGLE</a>
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button>
     <% } %>
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          appId: '{your-app-id}',
-          cookie: true,
-          xfbml: true,
-          version: '{api-version}',
-        });
-
-        FB.AppEvents.logPageView();
-      };
-
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-          return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, 'script', 'facebook-jssdk');
-    </script>
   </body>
 </html>

@@ -1,6 +1,5 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const FacebookTokenStrategy = require('passport-facebook-token');
 const User = require('../models/user');
 
 passport.use(
@@ -28,34 +27,6 @@ passport.use(
           });
         }
       });
-    }
-  )
-);
-
-passport.use(
-  'facebookToken',
-  new FacebookTokenStrategy(
-    {
-      clientID: process.env.FACEBOOK_ID,
-      clientSecret: process.env.FACEBOOK_SECRET,
-    },
-    async (accessToken, refreshToken, profile, done) => {
-      try {
-        console.log('profile', profile);
-        console.log('accessToken', accessToken);
-        console.log('refreshToken', refreshToken);
-        const user = await User.findOne({ email: profile.emails[0].value });
-        if (user) return done(null, user);
-        const newUser = new User({
-          name: profile.name,
-          email: profile.emails[0].value,
-          password: 'facebook',
-        });
-        let savedUser = await newUser.save();
-        return done(null, savedUser);
-      } catch (err) {
-        done(err);
-      }
     }
   )
 );

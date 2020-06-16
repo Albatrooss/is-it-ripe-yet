@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="images/settings-icon.png" type="image/png" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script defer src="/javascripts/home.js"></script>
+  </head>
+  <body>
+    <%- include('partials/nav') %>
+    <header>
+      <h1>Settings</h1>
+    </header>
+    <main>
+      <form action="/settings?_mehod" method="POST">
+        <label>Name: <input type="text" name="name" id="set-name" /></label>
+        <label>Name: <input type="text" name="name" id="set-name" /></label>
+        <label for="fruit-color"
+          >Color:
+          <div class="add-fruit-div">
+            <select name="color" id="fruit-color">
+              <option value="0"></option>
+              <option value="1">Audi</option>
+              <option value="2">BMW</option>
+              <option value="3">Citroen</option>
+              <option value="4">Ford</option>
+              <option value="5">Honda</option>
+              <option value="6">Jaguar</option>
+              <option value="7">Land Rover</option>
+              <option value="8">Mercedes</option>
+              <option value="9">Mini</option>
+            </select>
+          </div>
+        </label>
+      </form>
+    </main>
+  </body>
+</html>

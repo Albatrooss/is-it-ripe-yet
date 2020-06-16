@@ -3,6 +3,8 @@ var router = express.Router();
 const passport = require('passport');
 
 const indexCtrl = require('../controllers/index');
+const settingsCtrl = require('../controllers/settings');
+
 /* GET home page. */
 router.get('/', indexCtrl.show);
 router.get('/success', (req, res) => res.redirect('/'));
@@ -19,14 +21,6 @@ router.get(
   })
 );
 
-/*----- facebook OAuth ---------*/
-router.post(
-  '/auth/facebook',
-  passport.authenticate('facebookToken', { session: false }, (req, res, next) => {
-    console.log('got here');
-  })
-);
-
-router.get('/oauthFBCallback');
+router.get('/settings', settingsCtrl.show);
 
 module.exports = router;

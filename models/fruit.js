@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const fruitSchema = new Schema(
   {
     name: { type: String, required: true },
-    bought: { type: Date, default: Date.now() },
+    bought: { type: Number, default: Date.now() / 8.64e7, min: 0, max: Date.now() / 8.64e7 },
     type: { type: String, required: true, enum: ['banana', 'avocado'] },
     color: { type: Number, min: 0, max: 9, default: 0 },
     user: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
