@@ -12,7 +12,9 @@
     />
     <link rel="shortcut icon" href="images/settings-icon.png" type="image/png" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/settings.css" />
     <script defer src="/javascripts/home.js"></script>
+    <script defer src="/javascripts/settings.js"></script>
   </head>
   <body>
     <%- include('partials/nav') %>
@@ -21,25 +23,33 @@
     </header>
     <main>
       <form action="/settings?_mehod" method="POST">
-        <label>Name: <input type="text" name="name" id="set-name" /></label>
-        <label>Name: <input type="text" name="name" id="set-name" /></label>
+        <label
+          >Name: <input type="text" name="name" id="set-name" value="<%= user.name %>"
+        /></label>
+        <label
+          >Email: <input type="email" name="email" id="set-email" value="<%= user.email %>"
+        /></label>
+        <label
+          >Password: <input type="password" name="password" id="set-password" value="<%= user.password %>"
+        /></label>
         <label for="fruit-color"
-          >Color:
-          <div class="add-fruit-div">
+          >Ideal Banana Color:
+          <div class="ideal-fruit-div">
             <select name="color" id="fruit-color">
-              <option value="0"></option>
-              <option value="1">Audi</option>
-              <option value="2">BMW</option>
-              <option value="3">Citroen</option>
-              <option value="4">Ford</option>
-              <option value="5">Honda</option>
-              <option value="6">Jaguar</option>
-              <option value="7">Land Rover</option>
-              <option value="8">Mercedes</option>
-              <option value="9">Mini</option>
+              <option value="0" <%= user.perfect === 0 ? 'selected' : '' %>></option>
+              <option value="1"<%= user.perfect === 1 ? 'selected' : '' %>>Audi</option>
+              <option value="2"<%= user.perfect === 2 ? 'selected' : '' %>>BMW</option>
+              <option value="3"<%= user.perfect === 3 ? 'selected' : '' %>>Citroen</option>
+              <option value="4"<%= user.perfect === 4 ? 'selected' : '' %>>Ford</option>
+              <option value="5"<%= user.perfect === 5 ? 'selected' : '' %>>Honda</option>
+              <option value="6"<%= user.perfect === 6 ? 'selected' : '' %>>Jaguar</option>
+              <option value="7"<%= user.perfect === 7 ? 'selected' : '' %>>Land Rover</option>
+              <option value="8"<%= user.perfect === 8 ? 'selected' : '' %>>Mercedes</option>
+              <option value="9"<%= user.perfect === 9 ? 'selected' : '' %>>Mini</option>
             </select>
           </div>
         </label>
+        <button type="submit"><p>Update</p></button>
       </form>
     </main>
   </body>

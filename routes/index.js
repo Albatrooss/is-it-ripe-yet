@@ -22,5 +22,6 @@ router.get(
 );
 
 router.get('/settings', settingsCtrl.show);
+router.post('/settings', settingsCtrl.update);
 
 module.exports = router;

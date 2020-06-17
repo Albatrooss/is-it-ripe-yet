@@ -1,0 +1,66 @@
+header {
+    background-color: #fff;
+    text-align: center;
+    color: var(--nav-grey);
+}
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+main form label,
+main form button {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    margin: 7px 0;
+    padding: 15px;
+    border: 5px solid var(--nav-grey);
+    border-radius: 25px;
+    font-size: 24px;
+}
+main form button:hover {
+    border: 5px solid var(--nav-grey);
+    background-color: #dddddd;
+    color: var(--nav-grey);
+}
+main form button {
+    background-color: var(--nav-grey);
+    color: #ddd;
+}
+main form button p {
+    width: 100%;
+    text-align: center;
+  }
+main form label[for='fruit-color'] {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+main form input {
+    text-align: center;
+    height: 75px;
+    width: 200px;
+    border: 5px solid var(--nav-grey);
+    font-size: 25px;
+}
+main form input[type='email'] {
+    font-size: 15px;
+}
+
+.ideal-fruit-div select {
+    display: none;
+}
+.ideal-fruit-div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.set-option {
+    width: 60px;
+    height: 60px;
+    /* margin: 2px; */
+}

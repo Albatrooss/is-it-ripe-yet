@@ -1,15 +1,4 @@
-* {
-    --banana-0: #86a529;
-    --banana-1: #a8c552;
-    --banana-2: #C6E079;
-    --banana-3: #d9e079;
-    --banana-4: #F8E177;
-    --banana-5: #ffe46a;
-    --banana-6: #ebce4d;
-    --banana-7: #bba130;
-    --banana-8: #947f21;
-    --banana-9: #312b0e;
-}
+
 .fruit-show-color {
     width: 100px;
     height: 100px;

@@ -19,7 +19,7 @@ passport.use(
           const newUser = new User({
             name: profile.displayName,
             email: profile.emails[0].value,
-            password: 'google',
+            password: passwordGenerator(),
           });
           newUser.save(err => {
             if (err) return cb(err);
@@ -40,3 +40,12 @@ passport.deserializeUser((id, done) => {
     done(err, user);
   });
 });
+
+function passwordGenerator() {
+  let password = '';
+  let hash = '1234567890abcdefghijklmnopqrstuvwxyz!@#$%^&*_-+';
+  for (let i = 0; i < 12; i++) {
+    password += hash[Math.floor(Math.random() * hash.length)];
+  }
+  return password;
+}

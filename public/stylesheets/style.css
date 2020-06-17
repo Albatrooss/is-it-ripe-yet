@@ -3,8 +3,18 @@
   padding: 0;
   box-sizing: border-box;
   --nav-grey: #707070;
+
+  --banana-0: #86a529;
+  --banana-1: #a8c552;
   --banana-2: #C6E079;
+  --banana-3: #d9e079;
   --banana-4: #F8E177;
+  --banana-5: #ffe46a;
+  --banana-6: #ebce4d;
+  --banana-7: #bba130;
+  --banana-8: #947f21;
+  --banana-9: #312b0e;
+
 }
 a:visited,
 a {
@@ -83,6 +93,16 @@ nav form button p {
   width: 100%;
   text-align: center;
 }
+nav form button:hover {
+  border: 5px solid var(--nav-grey);
+  background-color: #dddddd;
+  color: var(--nav-grey);
+}
+nav form button {
+  border: 5px solid var(--nav-grey);
+  background-color: var(--nav-grey);
+  color: #ddd;
+}
 nav form input {
   height: 75px;
   width: 200px;
@@ -110,34 +130,34 @@ nav form input:last-child {
   height: 40px;
 }
 .option-0 {
-  background-color: darkgreen;
+  background-color:var(--banana-0);
 }
 .option-1 {
-  background-color: green;
+  background-color: var(--banana-1);
 }
 .option-2 {
-  background-color: greenyellow;
+  background-color: var(--banana-2);
 }
 .option-3 {
-  background-color: var(--banana-2);
+  background-color: var(--banana-3);
 }
 .option-4 {
   background-color: var(--banana-4);
 }
 .option-5 {
-  background-color: yellow;
+  background-color: var(--banana-5);
 }
 .option-6 {
-  background-color: rgb(235, 250, 25);
+  background-color: var(--banana-6);
 }
 .option-7 {
-  background-color: rgb(202, 180, 52);
+  background-color: var(--banana-7)
 }
 .option-8 {
-  background-color: rgb(199, 172, 22);
+  background-color: var(--banana-8)
 }
 .option-9 {
-  background-color: rgb(128, 87, 0);
+  background-color: var(--banana-9)
 }
 .option-selected {
   border: 5px solid red;
