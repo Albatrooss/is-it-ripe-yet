@@ -162,3 +162,9 @@ nav form input:last-child {
 .option-selected {
   border: 5px solid red;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}

@@ -15,18 +15,15 @@
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
-    <%- include('partials/nav') %> <%if (user) { %>
-    <header>
-      <h2>Welcome <%= user.name %>!</h2>
-      <form action="/search">
-        <input type="text" name="name" id="search-name" placeholder="Search for.." />
-        <button type="submit"><i class="fas fa-search"></i></button>
+    <%- include('partials/nav') %> <% if (results.length > 0) { %> <% results.forEach(result => { %>
+    <div class="search-result">
+      <h4><%= result.name %></h4>
+      <form action="/search/<%= result._id %>" method="POST">
+        <button type="submit">Add Friend</button>
       </form>
-    </header>
-    <% } else { %>
-    <a href="/login">LOGIN</a>
-    <a href="/signup">SIGN UP</a>
-    <a href="/auth/google">LOGIN WITH GOOGLE</a>
-    <% } %>
+    </div>
+    <% }) %> <%} else { %>
+    <p>Hm... I don't seem to be able to find anyone by that name..</p>
+    <%}%>
   </body>
 </html>

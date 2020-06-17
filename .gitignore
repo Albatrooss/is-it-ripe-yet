@@ -48,6 +48,7 @@ spec/reports
 spec/tmp
 test/tmp
 test/version_tmp
+routes/seed.js
 
 # node #
 ########

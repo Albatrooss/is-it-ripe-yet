@@ -4,6 +4,7 @@ const passport = require('passport');
 
 const indexCtrl = require('../controllers/index');
 const settingsCtrl = require('../controllers/settings');
+const searchCtrl = require('../controllers/search');
 
 /* GET home page. */
 router.get('/', indexCtrl.show);
@@ -23,5 +24,7 @@ router.get(
 
 router.get('/settings', settingsCtrl.show);
 router.post('/settings', settingsCtrl.update);
+
+router.get('/search', searchCtrl.show);
 
 module.exports = router;
