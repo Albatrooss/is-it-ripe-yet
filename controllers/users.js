@@ -38,6 +38,7 @@ const signup = async (req, res, next) => {
   let user = new User(req.body);
   try {
     user = await user.save();
+    console.log(user);
     req.logIn(user, err => {
       if (err) return next(err);
       return res.redirect('/');

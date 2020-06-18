@@ -17,7 +17,6 @@ var app = express();
 
 if (process.env.DATABASE_URL.match(/localhost/g)) {
   let seedRouter = require('./routes/seed');
-  console.log(seedRouter);
   app.use('/seed', seedRouter);
 }
 

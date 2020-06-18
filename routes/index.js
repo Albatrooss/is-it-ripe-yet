@@ -26,5 +26,7 @@ router.get('/settings', settingsCtrl.show);
 router.post('/settings', settingsCtrl.update);
 
 router.get('/search', searchCtrl.show);
+router.post('/search/remove/:id', searchCtrl.removeFriend);
+router.post('/search/:id', searchCtrl.addFriend);
 
 module.exports = router;

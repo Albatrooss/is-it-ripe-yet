@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/my-fruits.css" />
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
@@ -23,6 +24,17 @@
         <button type="submit"><i class="fas fa-search"></i></button>
       </form>
     </header>
+    <main>
+      <% fruits.forEach(fruit => { %>
+      <div class="index-card">
+        <h3>
+          <strong><a href="/fruit/<%= fruit.user._id%>"><%= fruit.user.name %></a>: </strong><%=
+          fruit.name %>
+        </h3>
+        <div class="fruit-show-color banana-color-<%= fruit.color %>"></div>
+      </div>
+      <% }) %>
+    </main>
     <% } else { %>
     <a href="/login">LOGIN</a>
     <a href="/signup">SIGN UP</a>

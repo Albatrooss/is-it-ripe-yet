@@ -1,4 +1,5 @@
 const Fruit = require('../models/fruit');
+const User = require('../models/user');
 
 const add = async (req, res, next) => {
   let fruit = req.query;
@@ -29,9 +30,20 @@ const show = async (req, res, next) => {
   }
 };
 
+const profile = async (req, res, next) => {
+  try {
+    let user = await User.findById(req.params.id);
+    console.log(user);
+    res.render('profile', { title: user.name, user });
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   add,
   show,
+  profile,
 };
 
 function findDaysElapsed(d) {
