@@ -18,27 +18,60 @@
   <body>
     <%- include('partials/nav') %> <%if (user) { %>
     <header>
-      <h2>Welcome <%= user.name %>!</h2>
+      <h2><%= user.name %></h2>
       <form action="/search">
         <input type="text" name="name" id="search-name" placeholder="Search for.." />
         <button type="submit"><i class="fas fa-search"></i></button>
       </form>
     </header>
-    <main>
+    <main class="logged-in">
       <% fruits.forEach(fruit => { %>
       <div class="index-card">
         <h3>
           <strong><a href="/fruit/<%= fruit.user._id%>"><%= fruit.user.name %></a>: </strong><%=
           fruit.name %>
         </h3>
-        <div class="fruit-show-color banana-color-<%= fruit.color %>"></div>
+        <img class="fruit-show" src="images/banana-0<%= fruit.color %>.png"></img>
       </div>
       <% }) %>
     </main>
     <% } else { %>
-    <a href="/login">LOGIN</a>
-    <a href="/signup">SIGN UP</a>
-    <a href="/auth/google">LOGIN WITH GOOGLE</a>
+    <main>
+      <div class="google-container">
+        <a href="/auth/google"
+          ><span class="google"><i class="fab fa-google"></i></span> Login with Google</a
+        >
+      </div>
+      <hr />
+      <div class="login-container">
+        <form class="auth-form" method="POST" action="/login">
+          <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input
+            type="email"
+            id="inputEmail"
+            class="form-control"
+            placeholder="Email address"
+            required=""
+            autofocus=""
+            name="email"
+          />
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input
+            type="password"
+            id="inputPassword"
+            class="form-control"
+            placeholder="Password"
+            required=""
+            name="password"
+          />
+          <div class="login-btn-container">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button
+            ><a href="/signup">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </main>
     <% } %>
   </body>
 </html>

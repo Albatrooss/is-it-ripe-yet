@@ -9,7 +9,7 @@ const userSchema = new Schema(
     name: { type: String, required: true },
     email: { type: String, required: true, lowercase: true, unique: true },
     password: { type: String, required: true },
-    perfect: { type: Number, default: 6, min: 0, max: 9 },
+    perfect: { type: Number, default: 4, min: 0, max: 9 },
     friends: { type: [Schema.Types.ObjectId], ref: 'Users' },
   },
   {

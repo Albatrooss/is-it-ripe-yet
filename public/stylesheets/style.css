@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -22,7 +23,8 @@ a {
   text-decoration: none;
 }
 body {
-  background-color: #ddd;;
+  background-color: #ddd;
+  font-family: 'Roboto', sans-serif;
 }
 nav div.main-nav{
   height: 100px;
@@ -39,6 +41,7 @@ nav div h1 {
   flex: 1;
   text-align: center;
   color: var(--nav-grey);
+  
 }
 nav div h1 strong {
   color: #F8E177;
@@ -128,43 +131,106 @@ nav form input:last-child {
 .option {
   width: 40px;
   height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
 }
-.option-0 {
-  background-color:var(--banana-0);
+
+.option img {
+  width: 100%;
 }
-.option-1 {
-  background-color: var(--banana-1);
-}
-.option-2 {
-  background-color: var(--banana-2);
-}
-.option-3 {
-  background-color: var(--banana-3);
-}
-.option-4 {
-  background-color: var(--banana-4);
-}
-.option-5 {
-  background-color: var(--banana-5);
-}
-.option-6 {
-  background-color: var(--banana-6);
-}
-.option-7 {
-  background-color: var(--banana-7)
-}
-.option-8 {
-  background-color: var(--banana-8)
-}
-.option-9 {
-  background-color: var(--banana-9)
-}
+
 .option-selected {
   border: 5px solid red;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
+}
+
+.google-container {
+  background-color: #fff;
+  width: 75%;
+  height: 50px;
+  font-size: 28px;
+  border-radius: 5px;
+}
+
+.google {
+  background: #4285F4;
+  color: #DB4437;
+  padding: 5px;
+  font-size: 44px;
+  border-radius: 10px;
+}
+
+.login-container {
+  width: 95%;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.login-container form {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--nav-grey);
+}
+
+.login-container input,
+.login-container button {
+  height: 75px;
+  width: 80%;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 10px;
+  border: 2px solid var(--nav-grey);
+}
+.login-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-btn-container button {
+  width: 50%;
+  background-color: var(--nav-grey);
+  color: white;
+}
+.login-btn-container a {
+  margin-left: 10px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
+  height: 50px;
+}
+
+header form {
+  display: flex;
+  height: 40px;
+}
+
+header button {
+  width: 40px;
+}
+
+main.logged-in {
+  background-color: #fff;
+}
+.fruit-show {
+  width: 100px;
+  height: 100px;
 }
