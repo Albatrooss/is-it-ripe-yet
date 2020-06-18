@@ -18,7 +18,7 @@
     <% console.log(user) %> <%- include('partials/nav') %> <% if (results.length > 0) { %> <%
     results.forEach(result => { %>
     <div class="search-result">
-      <h4><%= result.name %></h4>
+      <h4><a href="/fruit/<%= result._id %>"><%= result.name %></a></h4>
       <p>Friends: <%= result.friends.length %></p>
       <% if (user.friends.includes(result._id)) { %>
       <form action="/search/remove/<%= result._id %>" method="POST">
