@@ -156,7 +156,7 @@ main {
   background-color: #fff;
   width: 75%;
   height: 50px;
-  font-size: 28px;
+  font-size: 23px;
   border-radius: 5px;
 }
 
@@ -348,11 +348,14 @@ main.profile-main {
   align-items: center;
 }
 
-.profil-fruit-box,
+.profile-fruit-box,
 .profile-fruit-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.profile-fruit-box img {
+  width: 75px;
 }
 

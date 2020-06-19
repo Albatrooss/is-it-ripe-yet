@@ -23,7 +23,7 @@ for (var indol = 0; indol < select.length; indol++) {
   let d = document.createElement('div');
   let i = document.createElement('img');
   d.className = `option option-${indol}`;
-  i.src = `images/banana-0${indol}.png`;
+  i.src = `/images/banana-0${indol}.png`;
   d.value = indol;
   d.appendChild(i);
   d.addEventListener('click', function (e) {
