@@ -36,9 +36,13 @@ const show = async (req, res, next) => {
 
 const profile = async (req, res, next) => {
   try {
-    let user = await User.findById(req.params.id);
+    let friend = await User.findById(req.params.id);
     let fruits = await Fruit.find({ user: req.params.id });
-    res.render('fruit/profile', { title: user.name, user, fruits });
+    fruits.forEach(fruit => {
+      let newColor = fruit.color + findDaysElapsed(fruit.bought);
+      fruit.newColor = newColor > 7 ? 7 : newColor;
+    });
+    res.render('fruit/profile', { title: friend.name, friend, fruits });
   } catch (err) {
     next(err);
   }

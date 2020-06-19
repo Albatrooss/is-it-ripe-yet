@@ -19,7 +19,28 @@
     <%- include('../partials/nav') %>
     <header class="profile-header">
       <img src="images/basic-profile-pic.webp" alt="" />
-      <h2><%= user.name %>'s Profile</h2>
+      <h2><%= friend.name %>'s Profile</h2>
     </header>
+    <main class="profile-main">
+      <% if (fruits.length > 0) { fruits.forEach(fruit => {%>
+      <div class="profile-card">
+        <div class="profile-fruit-box">
+          <img src="images/banana-0<%= fruit.newColor %>.png" alt="" />
+          <p><%=fruit.name %></p>
+        </div>
+        <div class="profile-fruit-info">
+          <p><strong>Bought</strong>: <%= new Date(fruit.bought * 8.64e+7).toDateString() %></p>
+          <p>
+            <%= message(fruit) %>
+          </p>
+        </div>
+      </div>
+      <% }) %> <% } else { %>
+      <h4><%= friend.name %> doesn't appear to have any fruit!</h4>
+      <% } %>
+    </main>
   </body>
 </html>
+<% function message(fruit) { let days = user.perfect - fruit.newColor; if (fruit.newColor <
+user.perfect) { return `Ready in ${days} day${days > 1 ? 's' : ''}!`; } if (fruit.newColor >
+user.perfect && fruit.color > 5) { return 'Muffin time!'; } return "Time to eat!"; } %>

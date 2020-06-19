@@ -329,3 +329,30 @@ main.logged-in {
 .profile-header img {
   width: 100px;
 }
+
+main.profile-main {
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.profile-card {
+  width: 90%;
+  height: 150px;
+  border: 3px solid var(--nav-grey);
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profil-fruit-box,
+.profile-fruit-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
