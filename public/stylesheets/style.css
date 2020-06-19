@@ -253,8 +253,8 @@ main.logged-in {
   align-items: center;
   padding: 5px;
 }
-.index-fruit-box {
-  /* flex: 1; */
+.index-fruit-box p strong{
+  font-size: 1.1em;
 }
 .index-user-box img,
 .index-fruit-box img,
@@ -262,6 +262,10 @@ main.logged-in {
   width: 100px;
   border: 3px solid var(--nav-grey);
   border-radius: 10px;
+}
+.index-fruit-box img {
+  width: 75px;
+  height: 75px
 }
 
 .signup-form-container {
@@ -313,4 +317,15 @@ main.logged-in {
   align-items: center;
   border: 3px solid var(--nav-grey);
   border-radius: 5px;
+}
+
+.profile-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-evenly;
+}
+.profile-header img {
+  width: 100px;
 }

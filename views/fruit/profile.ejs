@@ -16,7 +16,10 @@
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
-    <%- include('partials/nav') %>
-    <h2><%= user.name %>'s Profile</h2>
+    <%- include('../partials/nav') %>
+    <header class="profile-header">
+      <img src="images/basic-profile-pic.webp" alt="" />
+      <h2><%= user.name %>'s Profile</h2>
+    </header>
   </body>
 </html>

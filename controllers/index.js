@@ -9,9 +9,11 @@ const show = async (req, res, next) => {
     if (req.user) {
       let arr = req.user.friends;
       arr.push(req.user._id);
-      console.log(arr);
       fruits = await Fruit.find({ user: { $in: arr } }).populate('user');
-      console.log(fruits);
+      fruits.forEach(fruit => {
+        let newColor = fruit.color + findDaysElapsed(fruit.bought);
+        fruit.color = newColor > 7 ? 7 : newColor;
+      });
     }
     res.render('index', { title: 'Is It Ripe Yet?', fruits, errs });
   } catch (err) {
@@ -22,3 +24,10 @@ const show = async (req, res, next) => {
 module.exports = {
   show,
 };
+
+function findDaysElapsed(d) {
+  let now = Math.ceil(Date.now() / 8.64e7);
+  let bought = d;
+  let val = now - bought;
+  return val > 9 ? 9 : val;
+}

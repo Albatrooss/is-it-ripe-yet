@@ -25,7 +25,7 @@ const show = async (req, res, next) => {
     let fruits = await Fruit.find({ user: req.user._id });
     fruits.forEach(fruit => {
       let newColor = fruit.color + findDaysElapsed(fruit.bought);
-      fruit.newColor = newColor > 9 ? 9 : newColor;
+      fruit.newColor = newColor > 7 ? 7 : newColor;
     });
     console.log(fruits);
     res.render('fruit/show', { title: 'My Fruit', fruits });
@@ -37,8 +37,18 @@ const show = async (req, res, next) => {
 const profile = async (req, res, next) => {
   try {
     let user = await User.findById(req.params.id);
-    console.log(user);
-    res.render('profile', { title: user.name, user });
+    let fruits = await Fruit.find({ user: req.params.id });
+    res.render('fruit/profile', { title: user.name, user, fruits });
+  } catch (err) {
+    next(err);
+  }
+};
+
+const deleteOne = async (req, res, next) => {
+  try {
+    let deleted = await Fruit.findByIdAndRemove(req.params.id);
+    console.log('Deleted: ', deleted);
+    res.redirect('/fruit');
   } catch (err) {
     next(err);
   }
@@ -48,6 +58,7 @@ module.exports = {
   add,
   show,
   profile,
+  delete: deleteOne,
 };
 
 function findDaysElapsed(d) {

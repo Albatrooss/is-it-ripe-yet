@@ -16,15 +16,34 @@
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
-    <%- include('../partials/nav') %> <% if (fruits) { fruits.forEach(fruit => { %>
-    <h2><%= fruit.name %></h2>
-    <p>
-      <strong><%= fruit.type %></strong>: <%= new Date(fruit.bought * 8.64e+7).toDateString() %> <%=
-      fruit.color %>
-    </p>
-    <img class="fruit-show" src="images/banana-0<%= fruit.color %>.png"></img>
-    <% }) } else { %>
-    <h3>You don't appear to have any fruit!</h3>
-    <% } %>
+    <%- include('../partials/nav') %> 
+      <main>
+    <% if (fruits.length > 0) { fruits.forEach(fruit => { %>
+        <div class="show-card">
+          <div class="show-fruit-box">
+            <h2><%= fruit.name %></h2>
+            <img class="fruit-show" src="images/banana-0<%= fruit.newColor %>.png"></img>
+          </div>
+          <div class="show-fruit-info">
+            <p>
+              <strong>Bought</strong>: <%= new Date(fruit.bought * 8.64e+7).toDateString() %>
+            </p>
+            <p>
+              <%= message(fruit) %> 
+            </p>
+            <form action="/fruit/<%= fruit._id %>?_method=DELETE" method="POST">
+            <button type="submit">Eat</button></form>
+          </div>
+        </div>
+        <% }) } else { %>
+          <h3>You don't appear to have any fruit!</h3>
+          <% } %>
+        </main>
   </body>
 </html>
+<% function message(fruit) {
+  let days = user.perfect - fruit.newColor;
+  if (fruit.newColor < user.perfect) return `Ready in ${days} day${days > 1 ? 's' : ''}!`
+  if (fruit.newColor > user.perfect && fruit.color > 5) return 'Muffin time!';
+  return "Time to eat!";
+} %>
