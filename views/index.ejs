@@ -35,7 +35,7 @@
         </div>
         <div class="index-fruit-box">
           <img class="fruit-show" src="images/banana-0<%= fruit.color %>.png"></img>
-          <p><%= fruit.name %> </p>
+          <p><%= fruit.name %> <%= message(fruit) %>  </p>
         </div>
       </div>
       <% }) %>
@@ -83,3 +83,9 @@
     <% } %>
   </body>
 </html>
+<% function message(fruit) {
+  let days = fruit.user.perfect - fruit.color;
+  if (fruit.color < fruit.user.perfect) return `Ready in ${days} day${days > 1 ? 's' : ''}!`
+  if (fruit.color > fruit.user.perfect && fruit.color > 5) return 'Muffin time!';
+  return "Time to eat!";
+} %>
