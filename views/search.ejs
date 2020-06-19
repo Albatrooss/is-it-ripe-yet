@@ -15,23 +15,37 @@
     <script defer src="/javascripts/home.js"></script>
   </head>
   <body>
-    <% console.log(user) %> <%- include('partials/nav') %> <% if (results.length > 0) { %> <%
-    results.forEach(result => { %>
-    <div class="search-result">
-      <h4><a href="/fruit/<%= result._id %>"><%= result.name %></a></h4>
-      <p>Friends: <%= result.friends.length %></p>
-      <% if (user.friends.includes(result._id)) { %>
-      <form action="/search/remove/<%= result._id %>" method="POST">
-        <button type="submit">Remove Friend</button>
+    <%- include('partials/nav') %>
+    <header>
+      <h2><%= user.name %></h2>
+      <form action="/search">
+        <input type="text" name="name" id="search-name" placeholder="Search for.." />
+        <button type="submit"><i class="fas fa-search"></i></button>
       </form>
-      <% } else { %>
-      <form action="/search/<%= result._id %>" method="POST">
-        <button type="submit">Add Friend</button>
-      </form>
-      <% } %>
-    </div>
-    <% }) %> <%} else { %>
-    <p>Hm... I don't seem to be able to find anyone by that name..</p>
-    <%}%>
+    </header>
+    <main>
+      <% if (results.length > 0) { %> <% results.forEach(result => { %>
+      <div class="search-result">
+        <div class="result-user-box">
+          <img src="images/basic-profile-pic.webp" alt="" />
+          <h4><a href="/fruit/<%= result._id %>"><%= result.name %></a></h4>
+        </div>
+        <div class="result-rest">
+          <p>Friends: <%= result.friends.length %></p>
+          <% if (user.friends.includes(result._id)) { %>
+          <form action="/search/remove/<%= result._id %>" method="POST">
+            <button type="submit">Remove Friend</button>
+          </form>
+          <% } else { %>
+          <form action="/search/<%= result._id %>" method="POST">
+            <button type="submit">Add Friend</button>
+          </form>
+          <% } %>
+        </div>
+      </div>
+      <% }) %> <%} else { %>
+      <p>Hm... I don't seem to be able to find anyone by that name..</p>
+      <%}%>
+    </main>
   </body>
 </html>

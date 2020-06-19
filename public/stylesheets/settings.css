@@ -1,4 +1,4 @@
-header {
+.settings {
     background-color: #fff;
     text-align: center;
     color: var(--nav-grey);
@@ -44,7 +44,8 @@ main form input {
     text-align: center;
     height: 75px;
     width: 200px;
-    border: 5px solid var(--nav-grey);
+    border: 3px solid var(--nav-grey);
+    border-radius: 5px;
     font-size: 25px;
 }
 main form input[type='email'] {

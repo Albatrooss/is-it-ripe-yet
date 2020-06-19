@@ -22,7 +22,7 @@ const addFriend = async (req, res, next) => {
     req.user.friends.push(req.params.id);
     let message = await req.user.save();
     console.log(message, m1);
-    res.redirect('/');
+    res.redirect(`/fruit/${req.params.id}`);
   } catch (err) {
     next(err);
   }
@@ -46,7 +46,7 @@ const removeFriend = async (req, res, next) => {
     let meSave = await req.user.save();
     let otherSave = await other.save();
     console.log(meSave, otherSave);
-    res.redirect('/search');
+    res.redirect('/');
   } catch (err) {
     next(err);
   }

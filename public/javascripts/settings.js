@@ -10,7 +10,10 @@ let settingSelected = parseInt(idealSelect.value);
 
 for (var indol = 0; indol < select.length; indol++) {
   let d = document.createElement('div');
-  d.className = `set-option option-${indol}`;
+  d.className = `set-option option option-${indol}`;
+  let i = document.createElement('img');
+  i.src = `images/banana-0${indol}.png`;
+  d.appendChild(i);
   if (settingSelected === indol) d.classList.add('option-selected');
   d.value = indol;
   d.addEventListener('click', function (e) {

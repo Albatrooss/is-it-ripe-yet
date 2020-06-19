@@ -22,7 +22,7 @@
       <strong><%= fruit.type %></strong>: <%= new Date(fruit.bought * 8.64e+7).toDateString() %> <%=
       fruit.color %>
     </p>
-    <div class="fruit-show-color banana-color-<%= fruit.newColor %>"></div>
+    <img class="fruit-show" src="images/banana-0<%= fruit.color %>.png"></img>
     <% }) } else { %>
     <h3>You don't appear to have any fruit!</h3>
     <% } %>

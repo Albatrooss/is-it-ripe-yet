@@ -4,21 +4,12 @@ const User = require('../models/user');
 const add = async (req, res, next) => {
   let fruit = req.query;
   // fruit.type = fruit.type.toLowerCase();
-  console.log('date: ', fruit);
   if (fruit.bought === '') {
-    console.log('null');
-    fruit.bought = Math.ceil(Date.now() / 8.64e7);
+    delete fruit.bought;
   } else {
-    console.log('something', fruit.bought);
-
-    fruit.bought = Math.ceil(new Date(fruit.bought).valueOf() / 8.64e7);
+    fruit.bought = Math.floor(new Date(fruit.bought).valueOf() / 8.64e7);
   }
-  // fruit.bought =
-  //   fruit.bought !== null
-  //     ? Math.ceil(new Date(fruit.bought).valueOf() / 8.64e7)
-  //     : Math.ceil(Date.now() / 8.64e7);
   fruit.user = req.user._id;
-  console.log('date: ', fruit.bought);
   try {
     let newFruit = new Fruit(fruit);
     let fruitRes = await newFruit.save(fruit);
@@ -61,7 +52,7 @@ module.exports = {
 
 function findDaysElapsed(d) {
   let now = Math.ceil(Date.now() / 8.64e7);
-  let bought = d.valueOf();
+  let bought = d;
   let val = now - bought;
   return val > 9 ? 9 : val;
 }

@@ -1,37 +1,43 @@
-<div class="auth-form-container">
-  <form class="auth-form" method="POST" action="<%= postUrl %>">
+<div class="signup-form-container">
+  <form class="signup-form" method="POST" action="<%= postUrl %>">
     <h1 class="h3 mb-3 font-weight-normal"><%= title %></h1>
     <% if (btnText === 'Sign Up') {%>
-    <label for="inputName" class="sr-only">Name</label>
-    <input
-      type="texy"
-      id="inputName"
-      class="form-control"
-      placeholder="Name"
-      required=""
-      autofocus=""
-      name="name"
-    />
+    <label for="inputName" class="sr-only"
+      >Name
+      <input
+        type="texy"
+        id="inputName"
+        class="form-control"
+        placeholder="Name"
+        required=""
+        autofocus=""
+        name="name"
+      />
+    </label>
+
     <% } %>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input
-      type="email"
-      id="inputEmail"
-      class="form-control"
-      placeholder="Email address"
-      required=""
-      autofocus=""
-      name="email"
-    />
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input
-      type="password"
-      id="inputPassword"
-      class="form-control"
-      placeholder="Password"
-      required=""
-      name="password"
-    />
+    <label for="inputEmail" class="sr-only"
+      >Email
+      <input
+        type="email"
+        id="inputEmail"
+        class="form-control"
+        placeholder="Email address"
+        required=""
+        autofocus=""
+        name="email"
+    /></label>
+
+    <label for="inputPassword" class="sr-only"
+      >Password
+      <input
+        type="password"
+        id="inputPassword"
+        class="form-control"
+        placeholder="Password"
+        required=""
+        name="password"
+    /></label>
     <button class="btn btn-lg btn-primary btn-block" type="submit"><%= btnText %></button>
   </form>
 </div>

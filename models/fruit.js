@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { getMaxListeners } = require('./user');
 const Schema = mongoose.Schema;
 
 const fruitSchema = new Schema(
@@ -6,9 +7,9 @@ const fruitSchema = new Schema(
     name: { type: String, required: true },
     bought: {
       type: Number,
-      default: Date.now() / 8.64e7,
+      default: getMax(),
       min: 0,
-      max: Math.ceil(Date.now() / 8.64e7),
+      max: getMax(),
     },
     type: { type: String, default: 'banana', enum: ['banana', 'avocado'] },
     color: { type: Number, min: 0, max: 9, default: 0 },
@@ -18,5 +19,11 @@ const fruitSchema = new Schema(
     timestamps: true,
   }
 );
+
+function getMax() {
+  let today = new Date(Date.now());
+  let hours = today.getHours();
+  return Math.ceil((today.valueOf() - hours * 3.6e6) / 8.64e7);
+}
 
 module.exports = mongoose.model('Fruit', fruitSchema);
